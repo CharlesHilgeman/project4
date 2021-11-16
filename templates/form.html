@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pet Form</title>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <body>
+        <div class="container">
+            <div class="jumbotron" style="text-align: center">
+                <h1>Estimate your salary</h1>
+                <p>Enter your details below!</p>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <form method="POST" action="/send" role="form", name="petform">
+                        <div class="form-group">
+                            <label for="inputAge">Age</label>
+                            <input type="text" class="form-control" id="inputAge" name="age" placeholder="Age">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputWorkclass">Workclass</label>
+                            <input type="text" class="form-control" id="inputWorkclass" name="workclass" placeholder="Work Class">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEducation">Education</label>
+                            <input type="text" class="form-control" id="inputEducation" name="education" placeholder="Education">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputMarital">Marital Status</label>
+                            <input type="text" class="form-control" id="inputMarital" name="marital" placeholder="Marital Status">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputOccupation">Occupation</label>
+                            <input type="text" class="form-control" id="inputOccupation" name="occupation" placeholder="Occupation">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputRace">Race</label>
+                            <input type="text" class="form-control" id="inputRace" name="race" placeholder="Race">
+                        </div>
+                        <div class="form-group">
+                            <input type="radio" class="form-control" id="female" name="sex1" value="Female">
+                            <label for="female">Female</label>
+                            <input type="radio" class="form-control" id="male" name="sex2" value="Male">
+                            <label for="male">Male</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputHours">Hours</label>
+                            <input type="text" class="form-control" id="inputHours" name="hours" placeholder="Hours per Week">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputCountry">Native Country</label>
+                            <input type="text" class="form-control" id="inputCountry" name="country" placeholder="Country">
+                        </div>
+                        <input type="submit" value="submit" class="btn btn-default">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
