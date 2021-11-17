@@ -30,36 +30,91 @@
             </div>
             <div class="row">
                 <div class="col-md-offset-2 col-md-8">
-                    <form method="POST" action="/send" role="form", name="petform">
+                    <form method="POST" action="/send" role="form" name="salform">
                         <div class="form-group">
                             <label for="inputAge">Age</label>
                             <input type="text" class="form-control" id="inputAge" name="age" placeholder="Age">
                         </div>
                         <div class="form-group">
                             <label for="inputWorkclass">Workclass</label>
-                            <input type="text" class="form-control" id="inputWorkclass" name="workclass" placeholder="Work Class">
+                            <select class="form-control" id="inputWorkclass" name="workclass">
+                                <option value="workclass_Federal-gov">Federal-gov</option>
+                                <option value="workclass_Local-gov">Local-gov</option>
+                                <option value="workclass_Private">Private</option>
+                                <option value="workclass_Self-emp-inc">Self-emp-inc</option>
+                                <option value="workclass_Self-emp-not-inc">Self-emp-not-inc</option>
+                                <option value="workclass_State-gov">State-gov</option>
+                                <option value="workclass_Without-pay">Without-pay</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="inputEducation">Education</label>
-                            <input type="text" class="form-control" id="inputEducation" name="education" placeholder="Education">
+                            <select class="form-control" id="inputEducation" name="education">
+                                <option value="education_Preschool">Preschool</option>
+                                <option value="education_1st-4th">1st-4th</option>
+                                <option value="education_5th-6th">5th-6th</option>
+                                <option value="education_7th-8th">7th-8th</option>
+                                <option value="education_9th">9th</option>
+                                <option value="education_10th">10th</option>
+                                <option value="education_11th">11th</option>
+                                <option value="education_12th">12th</option>
+                                <option value="education_HS-grad">HS-grad</option>
+                                <option value="education_Some-college">Some-college</option>
+                                <option value="education_Assoc-voc">Assoc-voc</option>
+                                <option value="education_Assoc-acdm">Assoc-acdm</option>
+                                <option value="education_Bachelors">Bachelors</option>
+                                <option value="education_Masters">Masters</option>
+                                <option value="education_Prof-school">Prof-school</option>
+                                <option value="education_Doctorate">Doctorate</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="inputMarital">Marital Status</label>
-                            <input type="text" class="form-control" id="inputMarital" name="marital" placeholder="Marital Status">
+                            <select class="form-control" id="inputMarital" name="marital">
+                                <option value="marital_status_Married-AF-spouse">Married-AF-spouse</option>
+                                <option value="marital_status_Married-civ-spouse">Married-civ-spouse</option>
+                                <option value="marital_status_Married-spouse-absent">Married-spouse-absent</option>
+                                <option value="marital_status_Divorced">Divorced</option>
+                                <option value="marital_status_Separated">Separated</option>
+                                <option value="marital_status_Widowed">Widowed</option>
+                                <option value="marital_status_Never-married">Never-married</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="inputOccupation">Occupation</label>
-                            <input type="text" class="form-control" id="inputOccupation" name="occupation" placeholder="Occupation">
+                            <select class="form-control" id="inputOccupation" name="occupation">
+                                <option value="occupation_Adm-clerical">Adm-clerical</option>
+                                <option value="occupation_Armed-Forces">Armed-Forces</option>
+                                <option value="occupation_Craft-repair">Craft-repair</option>
+                                <option value="occupation_Exec-managerial">Exec-managerial</option>
+                                <option value="occupation_Farming-fishing">Farming-fishing</option>
+                                <option value="occupation_Handlers-cleaners">Handlers-cleaners</option>
+                                <option value="occupation_Machine-op-inspct">Machine-op-inspct</option>
+                                <option value="occupation_Other-service">Other-service</option>
+                                <option value="occupation_Priv-house-serv">Priv-house-serv</option>
+                                <option value="occupation_Prof-specialty">Prof-specialty</option>
+                                <option value="occupation_Protective-serv">Protective-serv</option>
+                                <option value="occupation_Sales">Sales</option>
+                                <option value="occupation_Tech-support">Tech-support</option>
+                                <option value="occupation_Transport-moving">Transport-moving</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="inputRace">Race</label>
-                            <input type="text" class="form-control" id="inputRace" name="race" placeholder="Race">
+                            <select class="form-control" id="inputRace" name="race">
+                                <option value="race_White">White</option>
+                                <option value="race_Black">Black</option>
+                                <option value="race_Asian-Pac-Islander">Asian-Pac-Islander</option>
+                                <option value="race_Amer-Indian-Eskimo">Amer-Indian-Eskimo</option>
+                                <option value="race_Other">Other</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <input type="radio" class="form-control" id="female" name="sex1" value="Female">
-                            <label for="female">Female</label>
-                            <input type="radio" class="form-control" id="male" name="sex2" value="Male">
-                            <label for="male">Male</label>
+                            <label for="inputSex">Sex</label>
+                            <select class="form-control" id="inputSex" name="sex">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="inputHours">Hours</label>
@@ -67,7 +122,51 @@
                         </div>
                         <div class="form-group">
                             <label for="inputCountry">Native Country</label>
-                            <input type="text" class="form-control" id="inputCountry" name="country" placeholder="Country">
+                            <select class="form-control" id="inputCountry" name="country">
+                                <option value="native_country_Cambodia">Cambodia</option>
+                                <option value="native_country_Canada">Canada</option>
+                                <option value="native_country_China">China</option>
+                                <option value="native_country_Columbia">Columbia</option>
+                                <option value="native_country_Cuba">Cuba</option>
+                                <option value="native_country_Dominican-Republic">Dominican-Republic</option>
+                                <option value="native_country_Ecuador">Ecuador</option>
+                                <option value="native_country_El-Salvador">El-Salvador</option>
+                                <option value="native_country_England">England</option>
+                                <option value="native_country_France">France</option>
+                                <option value="native_country_Germany">Germany</option>
+                                <option value="native_country_Greece">Greece</option>
+                                <option value="native_country_Guatemala">Guatemala</option>
+                                <option value="native_country_Haiti">Haiti</option>
+                                <option value="native_country_Holand-Netherlands">Holand-Netherlands</option>
+                                <option value="native_country_Honduras">Honduras</option>
+                                <option value="native_country_Hong">Hong</option>
+                                <option value="native_country_Hungary">Hungary</option>
+                                <option value="native_country_Guatemala">Guatemala</option>
+                                <option value="native_country_Haiti">Haiti</option>
+                                <option value="native_country_India">India</option>
+                                <option value="native_country_Iran">Iran</option>
+                                <option value="native_country_Ireland">Ireland</option>
+                                <option value="native_country_Italy">Italy</option>
+                                <option value="native_country_Jamaica">Jamaica</option>
+                                <option value="native_country_Japan">Japan</option>
+                                <option value="native_country_Laos">Laos</option>
+                                <option value="native_country_Mexico">Mexico</option>
+                                <option value="native_country_Nicaragua">Nicaragua</option>
+                                <option value="native_country_Outlying-US(Guam-USVI-etc)">Outlying-US(Guam-USVI-etc)</option>
+                                <option value="native_country_Peru">Peru</option>
+                                <option value="native_country_Philippines">Philippines</option>
+                                <option value="native_country_Poland">Poland</option>
+                                <option value="native_country_Portugal">Portugal</option>
+                                <option value="native_country_Puerto-Rico">Puerto-Rico</option>
+                                <option value="native_country_Scotland">Scotland</option>
+                                <option value="native_country_South">South</option>
+                                <option value="native_country_Taiwan">Taiwan</option>
+                                <option value="native_country_Thailand">Thailand</option>
+                                <option value="native_country_Trinadad&Tobago">Trinadad&Tobago</option>
+                                <option value="native_country_United-States">United-States</option>
+                                <option value="native_country_Vietnam">Vietnam</option>
+                                <option value="native_country_Yugoslavia">Yugoslavia</option>
+                            </select>
                         </div>
                         <input type="submit" value="submit" class="btn btn-default">
                     </form>
