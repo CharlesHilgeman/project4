@@ -9,9 +9,23 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-    body,h1 {font-family: "Montserrat", sans-serif}
-    img {margin-bottom: -7px}
-    .w3-row-padding img {margin-bottom: 12px}
+        body,
+        h1 {
+            font-family: "Montserrat", sans-serif
+        }
+
+        img {
+            margin-bottom: -7px
+        }
+
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
+
+        .jumbotron {
+            background-image: url('static/images/salary.jpg');
+            background-size: 100% 100%;
+        }
     </style>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
@@ -21,25 +35,28 @@
         <div class="jumbotron" style="text-align: center">
             <h1>Salary Estimator!</h1>
             <p>Estimate your potential salary.</p>
-        </div>
 
-        <div class="row">
-            <div class="col-md-12" style="text-align: center">
-                <h2>??</h2>
-                <div id="plot"></div>
+            <div class="row">
+                <div class="col-md-12" style="text-align: center">
+                    <h2>??</h2>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="/send" class="text-center">
+                    <button class="btn btn-default mx-auto">Estimate your Salary!</button>
+                </a>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-12" style="text-align: center">
-                <h2><a href="/send">Estimate your Salary!</a></h2>
-            </div>
-        </div>
+        <div id="plot"></div>
     </div>
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="static/js/data.js"></script>
+    <script src="static/js/plots.js"></script>
 </body>
 
 </html>
