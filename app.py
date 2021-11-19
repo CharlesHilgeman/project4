@@ -4,7 +4,7 @@ import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-
+import pickle 
 
 from flask import (
     Flask,
@@ -21,7 +21,8 @@ app = Flask(__name__)
 #################################################
 # Database Setup
 #################################################
-
+# import machine learning model
+# joblib.load('model.sav')
 # create route that renders index.html template
 @app.route("/")
 def home():
@@ -67,6 +68,8 @@ def send():
         classifier1 = LogisticRegression()
 
         classifier1.fit(X_train1, y_train1)
+
+        # classifier1 = pickle.load(open('model.sav','rb'))
 
         predictions = classifier1.predict(test_dict_df)
         print("this is prediction:" + predictions)
