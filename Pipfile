@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+gunicorn = ">=20.0.0"
+Flask = ">=1.1.1"
+Jinja2 = ">=2.10.3"
+joblib = "*"
+pandas = "*"
+scikit-learn = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
