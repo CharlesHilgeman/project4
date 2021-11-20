@@ -1,45 +1,7 @@
 console.log(data);
 
-// function higher(people) {
-//   return people.salary = ">50k";
-// }
-
-// function lower(people) {
-//   return people.salary = "<=50k";
-// }
-
-// // Call the custom function with filter()
-// let higherPeople = data.filter(higher);
-// let lowerPeople = data.filter(lower);
-
-// // Trace for the Greek Data
-// let trace1 = {
-//     x: higherPeople.map(row => row.occupation),
-//     y: higherPeople.map(row => row.hours),
-//     type: "bar",
-//     name: 'Above Average Income'
-//   };
-
-// let trace2 = {
-//     x: lowerPeople.map(row => row.occupation),
-//     y: lowerPeople.map(row => row.hours),
-//     type: "bar",
-//     name: 'Below Average Income'
-// };
-
-// // Data trace array
-// let traceData = [trace1, trace2];
-
-// // Apply the group barmode to the layout
-// let layout = {
-//   title: "Weekly Hours by Profession",
-//   barmode: 'stack'
-// };
-
-// // Render the plot to the div tag with id "plot"
-// Plotly.newPlot("totalplot", traceData, layout);
-
 let jobs = ['Adm-clerical', 'Armed-Forces','Craft-repair','Exec-managerial', 'Farming-fishing','Handlers-cleaners', 'Machine-op-inspct','Other-service','Priv-house-serv','Prof-specialty','Protective-serv','Sales','Tech-support','Transport-moving']
+let workingClass = ['Federal-gov', 'Local-gov', 'Private','Self-emp-inc','Self-emp-not-inc','State-gov','Without-pay']
 
 let metric = "hours"
 
@@ -47,6 +9,7 @@ function plotMetric(data, jobs, metric) {
 
   let lowmetricArray = []
   let highmetricArray = []
+  let totalmetricArray = []
 
   for (let i =0; i < jobs.length; i++) {
     job = jobs[i]
@@ -75,10 +38,12 @@ function plotMetric(data, jobs, metric) {
 
     let lowmeanValue = lowertotal/lowercount
     let highmeanValue = highertotal/highercount
+    let totalmeanValue = (lowertotal+highertotal)/(lowercount+highercount)
 
 
     lowmetricArray.push(lowmeanValue)
     highmetricArray.push(highmeanValue)
+    totalmetricArray.push(totalmeanValue)
   }
   
   let trace1 = {
@@ -95,14 +60,29 @@ function plotMetric(data, jobs, metric) {
     name: "Above Average Income"
   }
 
+  let trace3 = {
+    x: jobs,
+    y: workingClass,
+    text: totalmetricArray,
+    mode: 'markers',
+    marker: {
+      size: totalmetricArray,
+      color: ['rgb(128,0,0)','rgb(128,0,128)','rgb(255,0,255)','rgb(0,128,0)','rgb(128,128,0)','rgb(0,0,128)','rgb(0,255,255)']}
+  }
+
   let traceData = [trace1,trace2]
+  let bubbleData = [trace3]
 
   let layout = {
     title: `Average by Profession for ${metric}`,
     barmode: 'group'
   };
+  let bubbleLayout = {
+    title: 'Jobs vs Work Class'
+  };
 
   Plotly.newPlot("plot", traceData, layout);
+  Plotly.newPlot('bubble', bubbleData, bubbleLayout)
 }
 
 plotMetric(data, jobs, metric)
