@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body,
-        h1 {
-            font-family: "Montserrat", sans-serif
-        }
+        /* h1 {
+            font-family:'Arial Narrow Bold'
+        } */
 
         img {
             margin-bottom: -7px
@@ -23,41 +23,57 @@
         }
 
         .jumbotron {
-            background-image: url('static/images/salary.jpg');
+            background-image: url('static/images/salary4.jpg');
             background-size: 100% 100%;
+            opacity: 50%;
         }
     </style>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <div class="jumbotron" style="text-align: center">
-            <h1>Salary Estimator!</h1>
-            <p>Estimate your potential salary.</p>
+    <div class="container" style="background-color: lightgrey;">
 
-            <div class="row">
-                <div class="col-md-12" style="text-align: center">
-                    <h2>??</h2>
-                </div>
-            </div>
+        <div class="jumbotron" style="text-align: center">
+            <h1 style="font-family:'Arial Narrow Bold'; color:white; font-size: 70px;"><br><br>Salary Estimator</h1>
+            <p style="color:white; text-shadow: black;">See the demographic breakdown of those making over <br> $50k a year, and see your potential salary.<br><br></p>
 
             <div style="text-align: center;">
                 <a href="/send" class="text-center">
-                    <button class="btn btn-default mx-auto">Estimate your Salary!</button>
+                    <button class="btn btn-default mx-auto">Estimate your Salary Now!</button>
                 </a>
             </div>
+            <p><br><br></p>
         </div>
-
-        <div id="plot"></div>
-        <div id="bubble"></div>
+        <div class="container" style="color: lightgrey;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <figure id="plot">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="color: lightgrey;"><p><br><br></p></div>
+        <div class="container" style="color: lightgrey;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <figure id="bubble">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="color: lightgrey;"><p><br><br></p></div>
     </div>
-
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="static/js/data.js"></script>
     <script src="static/js/plots.js"></script>
+
 </body>
 
 </html>
