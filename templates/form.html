@@ -9,9 +9,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-    body,h1 {font-family: "Montserrat", sans-serif}
+    body,
+    /* h1 {font-family: "Montserrat", sans-serif} */
     img {margin-bottom: -7px}
     .w3-row-padding img {margin-bottom: 12px}
+    .jumbotron {
+            background-image: url('static/images/salary5.jpg');
+            background-size: 100% 100%;
+            opacity: 50%;
+        }
     </style>
 
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -30,9 +36,9 @@
 </head>
 
 <body>
-        <div class="container">
+        <div class="container" style="background-color: lightgrey;">
             <div class="jumbotron" style="text-align: center">
-                <h1>Estimate your salary</h1>
+                <h1 style="font-family:'Arial Narrow Bold'; color:black; font-size: 70px;"> Estimate your salary</h1>
                 <p>Enter your details below!</p>
             </div>
             <div class="row">
@@ -124,7 +130,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="inputHours">Hours</label>
+                            <label for="inputHours">Hours You Intend to Work</label>
                             <input type="text" class="form-control" id="inputHours" name="hours" placeholder="Hours per Week">
                         </div>
                         <div class="form-group">
@@ -179,7 +185,7 @@
                     </form>
                 </div>
             </div>
-
+            <div class="container" style="color: lightgrey;"><p><br><br></p></div>
         </div>
 
 </body>
