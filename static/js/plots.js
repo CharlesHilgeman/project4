@@ -6,7 +6,7 @@ let workingClass = ['Federal-gov', 'Local-gov', 'Private','Self-emp-inc','Self-e
 let metric = "hours"
 
 function plotMetric(data, jobs, metric) {
-
+// bar graph
   let lowmetricArray = []
   let highmetricArray = []
   let totalmetricArray = []
@@ -59,7 +59,7 @@ function plotMetric(data, jobs, metric) {
     type: "bar",
     name: "Above Average Income"
   }
-
+// bubble chart
   let trace3 = {
     x: jobs,
     y: workingClass,
@@ -83,47 +83,63 @@ function plotMetric(data, jobs, metric) {
 
   Plotly.newPlot("plot", traceData, layout);
   Plotly.newPlot('bubble', bubbleData, bubbleLayout)
-
+//histogram
   var histx = [];
   var femalecount = 0;
   var malecount = 0;
+  var barx = [];
 
   for (let k = 0; k < data.length; k++) {
     if (data.salary=">50K"){
       histx.push(data[k].age);
-
-      if (data.sex = "Male"){
-        malecount += 1;
-      }
-      else {
-        femalecount +=1;
-      }
     }
   };
+  
+  for (let m = 0; m < data.length; m++) {
+    row = data[m];
+
+    if (row.sex == "Male") {
+      malecount += 1
+    }
+    else {
+      femalecount += 1
+    }
+  }
 
   let trace4 = {
     x: histx,
     type: 'histogram',
     nbinsx: 8
   };
-
+  var layouthist = {
+    title: "Breakdown by Age hi"
+  };
   let histdata=[trace4];
 
-  Plotly.newPlot('histogram', histdata);
+  Plotly.newPlot('histogram', histdata, layouthist);
 
+  //pie chart
   var piedata = [{
     values: [malecount, femalecount],
     labels: ['Male', 'Female'],
     type: 'pie'
   }];
   
-  var layout = {
-    height: 400,
-    width: 500
+  var layoutpie = {
+    title: "Breakdown by Gender"
   };
   
-  Plotly.newPlot('pie', piedata, layout);
+  Plotly.newPlot('pie', piedata, layoutpie);
 
+  var dataedu = 
+    {
+      histfunc: "count",
+      x: barx,
+      type: "histogram",
+      name: "count"
+    };
+
+    Plotly.newPlot('education', dataedu)
 }
 
 plotMetric(data, jobs, metric)
