@@ -1,3 +1,9 @@
 # Project4
-
-<b>2021 has been coined the year of the “Great Resignation”, as over 4 million Americans quit their jobs in the first half of the year alone.1 To understand the root causes of this shift, our team conducted an in-depth analysis of income statistics and employed machine learning techniques to find statistically significant drivers.  We examined a wide variety of characteristics including industry, age, functions, and levels of experience, amongst others. </b>
+<br>
+<b>As our world faces a bellowing pandemic, we experience the repercussions in various aspects of our lives. In the current job market, those of us looking to start or change our careers are met with the question of "How much could I possibly make if I were to enter this field?" Our group aimed to help individuals answer this question before determining which field they would go into.
+  
+ <br>Our user interactive website captures information from the user, utilizes machine learning to estimate the salary, and returns the estimated salary to the user in order to help them make these decisions.</b>
+<br><br>
+Within this project, we used Python Pandas along with Sklearn to clean and model the data. During this step, we tested various models and decided to use the logistic regression model as it resulted in the highest score of .83.
+<br> After cleaning the data and determining the best model, we ran the model in a Flask server atttached to our HTML homepage and form page.
+<br> Finally we used Plotly within Javascript to create interactive visualizations that can be seen on the homepage.
