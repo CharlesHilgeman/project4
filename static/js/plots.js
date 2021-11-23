@@ -83,6 +83,47 @@ function plotMetric(data, jobs, metric) {
 
   Plotly.newPlot("plot", traceData, layout);
   Plotly.newPlot('bubble', bubbleData, bubbleLayout)
+
+  var histx = [];
+  var femalecount = 0;
+  var malecount = 0;
+
+  for (let k = 0; k < data.length; k++) {
+    if (data.salary=">50K"){
+      histx.push(data[k].age);
+
+      if (data.sex = "Male"){
+        malecount += 1;
+      }
+      else {
+        femalecount +=1;
+      }
+    }
+  };
+
+  let trace4 = {
+    x: histx,
+    type: 'histogram',
+    nbinsx: 8
+  };
+
+  let histdata=[trace4];
+
+  Plotly.newPlot('histogram', histdata);
+
+  var piedata = [{
+    values: [malecount, femalecount],
+    labels: ['Male', 'Female'],
+    type: 'pie'
+  }];
+  
+  var layout = {
+    height: 400,
+    width: 500
+  };
+  
+  Plotly.newPlot('pie', piedata, layout);
+
 }
 
 plotMetric(data, jobs, metric)
