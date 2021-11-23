@@ -97,12 +97,13 @@ function plotMetric(data, jobs, metric) {
   
   for (let m = 0; m < data.length; m++) {
     row = data[m];
-
-    if (row.sex == "Male") {
-      malecount += 1
-    }
-    else {
-      femalecount += 1
+    if (row.salary = ">50k") {
+      if (row.sex == "Male") {
+        malecount += 1
+      }
+      else {
+        femalecount += 1
+      }
     }
   }
 
@@ -112,7 +113,7 @@ function plotMetric(data, jobs, metric) {
     nbinsx: 8
   };
   var layouthist = {
-    title: "Breakdown by Age hi"
+    title: "Breakdown by Age"
   };
   let histdata=[trace4];
 
@@ -126,20 +127,10 @@ function plotMetric(data, jobs, metric) {
   }];
   
   var layoutpie = {
-    title: "Breakdown by Gender"
+    title: ">50k Breakdown by Gender"
   };
   
   Plotly.newPlot('pie', piedata, layoutpie);
-
-  var dataedu = 
-    {
-      histfunc: "count",
-      x: barx,
-      type: "histogram",
-      name: "count"
-    };
-
-    Plotly.newPlot('education', dataedu)
 }
 
 plotMetric(data, jobs, metric)
